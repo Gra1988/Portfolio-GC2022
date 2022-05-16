@@ -27,7 +27,15 @@ div{
     }
 }
 /*Etiqueta del nombre*/
+@media (max-width:575px){
 #nombre{
     font-weight:bold;
-    margin-top: 5%;
+    margin-top: 30%;
         }
+        }
+        @media (min-width:575px){
+            #nombre{
+                font-weight:bold;
+                margin-top: 2%;
+                    }
+                }
