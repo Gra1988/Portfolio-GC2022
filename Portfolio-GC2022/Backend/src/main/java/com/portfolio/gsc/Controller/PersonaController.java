@@ -33,17 +33,20 @@ public String deletePersona(@PathVariable Long id){
 ipersonaService.deletePersona(id);
 return "La persona fue eliminada exitosamente";
 }
-//URL:PUERTO/personas/editar/(num id)/nombre,apellido, img
+//URL:PUERTO/personas/editar/(num id)/nombre,apellido,img,acercaDe
 @PutMapping ("/personas/editar/{id}")
 public Persona editPersona(@PathVariable Long id,
         @RequestParam("nombre") String nuevoNombre,
         @RequestParam("apellido") String nuevoApellido,
-        @RequestParam("img") String nuevoImg){
+        @RequestParam("img") String nuevoImg,
+        @RequestParam("acercaDe") String nuevoAcercaDe){
+            
     Persona persona = ipersonaService.findPersona(id);
     
     persona.setNombre(nuevoNombre);
     persona.setApellido(nuevoApellido);
     persona.setImg(nuevoImg);
+    persona.setAcercaDe(nuevoAcercaDe);
     
     ipersonaService.savePersona(persona);
     return persona;
