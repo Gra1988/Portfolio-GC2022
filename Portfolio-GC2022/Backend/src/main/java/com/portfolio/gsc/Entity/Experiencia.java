@@ -30,5 +30,7 @@ public class Experiencia {
     private String cargo;
     @NotNull
     @Size(min = 1, max = 500, message = "no cumple con la longitud")
-    private String descripción;
+    private String descripcion;
+
+    
     }

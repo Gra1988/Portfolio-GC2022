@@ -4,6 +4,7 @@ import com.portfolio.gsc.Entity.Experiencia;
 import com.portfolio.gsc.Interface.IExperienciaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ExperienciaController {
  @Autowired IExperienciaService iexperienciaService;
  
@@ -33,14 +35,14 @@ public class ExperienciaController {
      iexperienciaService.deleteExperiencia(id);
      return "La experiencia fue eliminada exitosamente";
  }
- //URL:PUERTO/experiencias/editar/(id)/empresa & fecha inicio & fecha fin & cargo & descripción
+ //URL:PUERTO/experiencias/editar/(id)/empresa & fecha inicio & fecha fin & cargo & descripcin
  @PutMapping("/experiencias/editar/{id}")
  public Experiencia editExperiencia(@PathVariable Long id,
                                          @RequestParam("empresa") String nuevoEmpresa,
                                          @RequestParam("fecha_inicio") String nuevoFecha_inicio,
                                          @RequestParam("fecha_fin") String nuevoFecha_fin,
                                          @RequestParam("cargo") String nuevoCargo,
-                                         @RequestParam("descripción") String nuevoDescripción){
+                                         @RequestParam("descripcion") String nuevoDescripcion){
      
      Experiencia experiencia = iexperienciaService.findExperiencia(id);
      
@@ -48,9 +50,16 @@ public class ExperienciaController {
      experiencia.setFecha_inicio(nuevoFecha_inicio);
      experiencia.setFecha_fin(nuevoFecha_fin);
      experiencia.setCargo(nuevoCargo);
-     experiencia.setDescripción(nuevoDescripción);
+     experiencia.setDescripcion(nuevoDescripcion);
      
      iexperienciaService.saveExperiencia(experiencia);
      return experiencia;
+     
+ 
  }
+ 
+ @GetMapping("/experiencias/traer/perfil")
+public Experiencia findExperiencia(){
+    return iexperienciaService.findExperiencia((long)1);
+}
 }
