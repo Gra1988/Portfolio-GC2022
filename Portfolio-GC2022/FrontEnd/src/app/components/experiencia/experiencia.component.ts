@@ -8,12 +8,16 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-experiencia: experiencia = new experiencia("", "", "", "", "");
+  
+  experiencias:any;
 
-  constructor(public experienciaService: ExperienciaService) { }
+  constructor(private datosExperiencias: ExperienciaService) { }
 
   ngOnInit(): void {
-    this.experienciaService.getExperiencia().subscribe(data =>{this.experiencia = data})
+    this.datosExperiencias.obtenerDatos().subscribe(data =>{
+      this.experiencias = data;})
+    }
   }
 
-}
+
+

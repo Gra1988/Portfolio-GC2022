@@ -11,7 +11,7 @@ URL = 'http://localhost:8080/experiencias/';
 
   constructor(private http: HttpClient) { }
 
-  public getExperiencia(): Observable<experiencia>{
-   return this.http.get<experiencia>(this.URL+ 'traer/perfil'); 
+  obtenerDatos(): Observable<any>{
+   return this.http.get(this.URL+ 'traer'); 
   }
 }

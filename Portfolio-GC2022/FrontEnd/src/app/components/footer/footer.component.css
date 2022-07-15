@@ -1,5 +1,5 @@
 .row{
-    background-color:#074f45;
+    background-color:#023831;
 }
 footer{
     color:white;
@@ -7,5 +7,5 @@ footer{
     display: flex;
     flex-direction: column;
     text-align: center;
-    box-shadow: 2px -2px 2px grey;
-}
+    box-shadow: 2px -2px 2px black;
+    }

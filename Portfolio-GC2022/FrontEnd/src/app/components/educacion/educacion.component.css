@@ -1,10 +1,20 @@
 .row{
-    padding: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px black;
+    color:antiquewhite;
+    border-radius: 1em;
 }
 div{
-color:black;    
-background-color:#257b6f;
+    background-color: #023831;
+    
 }
 h1, h3{
     display: inline;
+}
+.panel-body {
+    padding: 20px;
+}
+h1{
+color: white;
+font-style: italic;
 }

@@ -11,7 +11,7 @@ export class EducacionService {
 
   constructor(private http: HttpClient) { }
   
-  public getEducacion(): Observable<educacion>{
-    return this.http.get<educacion>(this.URL+'traer/perfil');
+  obtenerDatos(): Observable<any>{
+    return this.http.get(this.URL+'traer');
   }
 }

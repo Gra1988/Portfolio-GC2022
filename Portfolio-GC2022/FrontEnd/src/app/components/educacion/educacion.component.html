@@ -1,22 +1,18 @@
-<div class="row">
-    <h1>Estudios Realizados</h1>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-        <ul>
-            <li><h2>{{educacion.titulo}}</h2> 
-            <h3>{{educacion.institucion}}</h3></li>
-            <h3>{{educacion.fecha_fin}}</h3>
-        </ul>
-        <ul>
-            <li><h2>Estudio 2</h2> -
-            <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae molestias assumenda ad hic amet, similique quae veniam minima temporibus fugit fuga reprehenderit veritatis iste voluptate nemo corporis quasi dicta consectetur.</p>
-        </ul>
-        <ul>
-            <li><h2>Estudio 3</h2> -
-            <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae molestias assumenda ad hic amet, similique quae veniam minima temporibus fugit fuga reprehenderit veritatis iste voluptate nemo corporis quasi dicta consectetur.</p>
-        </ul>
+<div class="panel-body ">
+    <div class="row">
+        <h1>Estudios Realizados</h1>
+        <div>
+            <ul>
+                <br>
+                <ng-container *ngFor="let Educacion of educacion">
+                    <li>
+                        <h2>{{Educacion.titulo}}</h2>
+                        <h3>{{Educacion.institucion}}</h3>
+                    </li>
+                    <h4>({{Educacion.fecha_inicio}} - {{Educacion.fecha_fin}})</h4>
+                    <br>
+                </ng-container>
+            </ul>
+        </div>
     </div>
 </div>
-
