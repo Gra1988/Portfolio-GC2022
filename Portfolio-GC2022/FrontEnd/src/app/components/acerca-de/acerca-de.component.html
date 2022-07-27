@@ -1,69 +1,28 @@
-<div class="row">
-   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-       <img src="../../../assets/fotoperfil2.jpg" id="foto_perfil" 
-       class="img-fluid">
-   </div> 
-<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <h4 id="nombre">{{persona.nombre}} {{persona.apellido}}</h4>
-    <p>Full Stack Developer Jr</p>
-    <div class="col text-center">
-        <a
-        class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
-        data-placement="top"
-        data-toggle="tooltips"
-        data-original-title="Edit"
-        ><i class="fa fa-pencil"></i>
-        </a>
-        <a
-        class="btn btn-secondary tooltips"
-        data-placement="top"
-        data-toggle="tooltips"
-        data-original-title="Delete"
-        ><i class="fa fa-times"></i>
-        </a>
-    </div>
-    </div>
- <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-    <span>
-        <h1>Acerca de mí</h1>
-        <p>{{persona.acercaDe}}</p>
-        </span>
-</div>
-</div>
-<div class="modal"   id="myModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Editar información</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" >
-          <input 
-          type="text" placeholder="Indique su Nombre"
-          name="Nombre y Apellido"
-          class="form-control"
-          id="nombre"
-          />
-         <div class="">
-            <input 
-            type="text" placeholder="Indique su Apellido"
-            name="Nombre y Apellido"
-            class="form-control"
-            id="nombre"
-            />
-         <div class="">
-                <input 
-                type="text" placeholder="Acerca de Usted"
-                name="Nombre y Apellido"
-                class="form-control"
-                id="nombre"
-                />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+<div class="panel-body">
+  <div class="container" *ngFor="let Persona of personas">
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <img class="image" [src]="Persona.imgperfil" id="fotoperfil" class="img-fluid">
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <h4 id="nombre">{{Persona.nombre}} {{Persona.apellido}}</h4>
+        <p>Full Stack developer Jr. </p>
+
+        <div>
+          <div class="">
+            <a class="btn bi-pencil-square" id="btn-edit-exp" routerLink="/editar-acerca-de/{{Persona.id}}">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </div>
         </div>
       </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <span>
+          <h3>Acerca de mi</h3>
+          <p id="acercaDe">{{Persona.acercaDe}}
+          </p>
+        </span>
+      </div>
     </div>
-  
+  </div>
 </div>

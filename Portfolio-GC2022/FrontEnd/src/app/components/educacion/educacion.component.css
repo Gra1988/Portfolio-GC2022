@@ -18,3 +18,13 @@ h1{
 color: white;
 font-style: italic;
 }
+.btn-primary {
+    color: #fff;
+    background-color: black;
+    border-color: #6c757d;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #8b0000;
+    border-color: #6c757d;
+}

@@ -1,3 +1,10 @@
-<div>
-    <img src="../../../assets/Banner Portfolio.png" id="img_banner">
-</div>
+<ng-container *ngFor="let Portada of portada">
+    
+    <div>
+        <a class="btn bi-pencil-square" id="btn-edit-port" routerLink="/editar-portada/{{Portada.id}}">
+            <i class="fa fa-pencil"></i>
+        </a>
+        <img class="image" class="img-fluid" [src]="Portada.imgportada">
+    </div>
+</ng-container>
+

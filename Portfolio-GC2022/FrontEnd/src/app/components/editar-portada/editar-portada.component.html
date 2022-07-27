@@ -1,0 +1,27 @@
+<div class="col-md-6 offset-md-3">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <h3>Editar foto de portada</h3>
+            <br>
+            <br>
+            <div>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="empleo">Foto de portada (formato URL)</label>
+                        <br>
+                        <input type="text" class="form-control" id="imgportada" name="imgportada"
+                            [(ngModel)]="editPort.imgportada" required>
+                        <br>
+                    </div>
+                    <button class="btn btn-primary">
+                        Guardar cambios
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

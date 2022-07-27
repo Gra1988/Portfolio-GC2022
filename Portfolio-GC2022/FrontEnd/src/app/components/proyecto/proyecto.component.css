@@ -37,3 +37,20 @@ h1 {
 #img {
     box-shadow: 10px 10px 30px black;
 }
+.btn-primary {
+    color: #fff;
+    background-color: black;
+    border-color: #6c757d;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #8b0000;
+    border-color: #6c757d;
+}
+
+img {
+    width: 480px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px black
+   }

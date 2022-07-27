@@ -1,17 +1,49 @@
 <div class="panel-body ">
     <div class="row">
-        <h1>Proyectos Realizados</h1>
+        <div class="text">
+        <h1>Proyectos Realizados </h1>
+        <a
+            class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
+            data-placement="top"
+            data-toggle="tooltips"
+            data-original-title="Edit"
+            ><i class="fa fa-pencil"></i>
+            </a>
+            <a
+            class="btn btn-secondary tooltips"
+            data-placement="top"
+            data-toggle="tooltips"
+            data-original-title="Delete"
+            ><i class="fa fa-times"></i>
+            </a>
         <div>
             <ul>
                 <br>
                 <ng-container *ngFor="let Proyecto of proyectos">
                     <li>
                         <h2>{{Proyecto.nombre}}</h2>
-                        <h3>{{Proyecto.descripcion}}</h3>
-                    </li>
-                   <img src= "../../../assets/Portada Peluditos.png"  
-                            class="img-fluid">
-                        <img src="Proyecto.img">
+                        <h4>{{Proyecto.descripcion}}</h4>
+                        </li>
+                        <br>
+                   <img class="image" [src]="Proyecto.img"> 
+                                         
+                    <br>
+                    <br>
+                    <a
+                    class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
+                    data-placement="top"
+                    data-toggle="tooltips"
+                    data-original-title="Edit"
+                    ><i class="fa fa-pencil"></i>
+                    </a>
+                    <a
+                    class="btn btn-secondary tooltips"
+                    data-placement="top"
+                    data-toggle="tooltips"
+                    data-original-title="Delete"
+                    ><i class="fa fa-times"></i>
+                    </a>
+                    <br>
                     <br>
                 </ng-container>
             </ul>

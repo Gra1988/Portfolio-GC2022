@@ -1,0 +1,14 @@
+.div{
+    background-color: rgba(0,0,0, 0.5) !important;
+}
+.row{
+    border: solid 5px gray;
+    padding: 20px;
+    border-radius: 20px;
+}
+.panel-body{
+    background-color: transparent;
+}
+.row{
+    background-color: gray;
+}
