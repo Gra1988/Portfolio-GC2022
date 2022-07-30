@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { proyecto } from 'src/app/model/proyecto.model';
+import { Proyecto } from 'src/app/model/proyecto.model';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -11,11 +11,17 @@ export class ProyectoComponent implements OnInit {
 
   proyectos:any;
 
-  constructor(private datosProyectos: ProyectoService) { }
+  constructor(private datosProyectos: ProyectoService, private proyectoservice: ProyectoService) { }
 
   ngOnInit(): void {
     this.datosProyectos.obtenerDatos().subscribe(data =>{
       this.proyectos = data;})
     }
+    eliminar_proyecto(id:number) {
+      this.proyectoservice.eliminarProyecto(id).subscribe(data => {
+        alert ("¿Desea realmente eliminar el proyecto seleccionado?")
+        });
+        location.reload();
+        }
   }
 

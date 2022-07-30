@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { experiencia } from 'src/app/model/experiencia.model';
+import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
@@ -11,13 +11,20 @@ export class ExperienciaComponent implements OnInit {
   
   experiencias:any;
 
-  constructor(private datosExperiencias: ExperienciaService) { }
+  constructor(private datosExperiencias: ExperienciaService, private experienciaservice: ExperienciaService) { }
 
   ngOnInit(): void {
     this.datosExperiencias.obtenerDatos().subscribe(data =>{
       this.experiencias = data;})
     }
+    eliminar_experiencia(id:number) {
+      this.experienciaservice.eliminarExperiencia(id).subscribe(data => {
+        alert ("¿Desea realmente eliminar la experiencia seleccionada?")
+        });
+        location.reload();
+        }
   }
+  
 
 
 

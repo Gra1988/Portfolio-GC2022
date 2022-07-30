@@ -7,24 +7,24 @@ div{
     text-align: center;
 }
 /*Estilo foto de perfil*/
-@media (min-width:576px){
+@media (min-width:575px){
     #foto_perfil{
         position:absolute;
         width:15%;
         border-radius:100%;
         box-shadow:3px 3px 3px grey;
         left:3%;
-        top: 582px;
+        top: 480px;
     }
 }
 @media (max-width:575px){
     #foto_perfil{
         position:absolute;
-        width: 150px;
+        width: 30px;
         border-radius:100%;
         box-shadow:3px 3px 3px grey;
         left:33%;
-        top:600px;
+        top:590px;
     }
 }
 /*Etiqueta del nombre*/

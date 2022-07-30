@@ -4,6 +4,7 @@ import com.portfolio.gsc.Entity.Proyecto;
 import com.portfolio.gsc.Interface.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -37,25 +37,25 @@ public class ProyectoController {
  }
  //URL:PUERTO/proyectos/editar/(id)/nombre & descripcion & img
  @PutMapping("/proyectos/editar/{id}")
- public Proyecto editProyecto(@PathVariable Long id,
-                                         @RequestParam("nombre") String nuevoNombre,
-                                         @RequestParam("descripcion") String nuevoDescripcion,
-                                         @RequestParam("img") String nuevoImg){
-     
-     Proyecto proyecto = iproyectoService.findProyecto(id);
-     
-     proyecto.setNombre(nuevoNombre);
-     proyecto.setDescripcion(nuevoDescripcion);
-     proyecto.setImg(nuevoImg);
-          
-     iproyectoService.saveProyecto(proyecto);
-     return proyecto;
-     
+ public ResponseEntity<Proyecto>editProyecto(@PathVariable Long id,
+        @RequestBody Proyecto e) {
+    Proyecto nuevoProy = iproyectoService.findProyecto(id);
+       
+    nuevoProy.setNombre(e.getNombre());
+    nuevoProy.setDescripcion(e.getDescripcion());
+    nuevoProy.setImg(e.getImg());    
+    
+     iproyectoService.saveProyecto(nuevoProy);
+      return ResponseEntity.ok(nuevoProy);     
  
 }
 
  @GetMapping("/proyectos/traer/perfil")
 public Proyecto findProyecto(){
     return iproyectoService.findProyecto((long)1);
+}
+@GetMapping("/proyectos/details/{id}")
+public Proyecto findProyecto(@PathVariable Long id){
+    return iproyectoService.findProyecto(id);
 }
 }

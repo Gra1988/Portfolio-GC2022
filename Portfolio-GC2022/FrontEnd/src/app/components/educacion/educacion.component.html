@@ -1,21 +1,12 @@
 <div class="panel-body ">
     <div class="row">
         <div class="text">
-        <h1>Estudios Cursados </h1>
-        <a
-            class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
-            data-placement="top"
-            data-toggle="tooltips"
-            data-original-title="Edit"
-            ><i class="fa fa-pencil"></i>
-            </a>
-            <a
-            class="btn btn-secondary tooltips"
-            data-placement="top"
-            data-toggle="tooltips"
-            data-original-title="Delete"
-            ><i class="fa fa-times"></i>
-            </a>
+            <h1>Estudios Cursados </h1>
+           <div>
+            <a class="button" routerLink="/newEdu">Agregar Estudios</a>
+           </div>
+        </div>
+
         <div>
             <ul>
                 <br>
@@ -25,24 +16,14 @@
                         <h3>{{Educacion.institucion}}</h3>
                     </li>
                     <h4>({{Educacion.fecha_inicio}} - {{Educacion.fecha_fin}})</h4>
-                    <a
-                    class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
-                    data-placement="top"
-                    data-toggle="tooltips"
-                    data-original-title="Edit"
-                    ><i class="fa fa-pencil"></i>
-                    </a>
-                    <a
-                    class="btn btn-secondary tooltips"
-                    data-placement="top"
-                    data-toggle="tooltips"
-                    data-original-title="Delete"
-                    ><i class="fa fa-times"></i>
-                    </a>
-                    <br>
-                    <br>
-                </ng-container>
-            </ul>
-        </div>
+                    <h5>{{Educacion.promedio}}</h5>
+                    <div class="">
+                        <div class="">
+                            <a class="btn bi-pencil-square" id="btn-edit-exp" routerLink="/editar-educacion/{{Educacion.id}}">
+                              <i class="fa fa-pencil"></i>
+                            </a>
+                          </div>
+                          <button (click)="eliminar_educacion(Educacion.id)" class="btn btn-info">
+                            X
+                        </button>
     </div>
-</div>

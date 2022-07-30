@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
- class ImpProyectoService implements IProyectoService {
+ public class ImpProyectoService implements IProyectoService {
     @Autowired IProyectoRepository iproyectoRepository;
 
     @Override

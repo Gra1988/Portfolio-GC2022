@@ -25,7 +25,18 @@ private String nombre;
 private String descripcion;
  
  @NotNull
- @Size(min = 1, max =500, message = "No cumple con la longitud")  
+ @Size(min = 1, max = 1000, message = "No cumple con la longitud")  
 private String img;
+ 
+ public Proyecto(){
+          
+      }
+      public Proyecto(Long id, String nombre, String descripcion, String img){
+          this.id = id;
+          this.nombre = nombre;
+          this.descripcion = descripcion;
+          this.img = img;
+                    
+      }
 
 }

@@ -1,52 +1,32 @@
 <div class="panel-body ">
     <div class="row">
         <div class="text">
-        <h1>Proyectos Realizados </h1>
-        <a
-            class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
-            data-placement="top"
-            data-toggle="tooltips"
-            data-original-title="Edit"
-            ><i class="fa fa-pencil"></i>
-            </a>
-            <a
-            class="btn btn-secondary tooltips"
-            data-placement="top"
-            data-toggle="tooltips"
-            data-original-title="Delete"
-            ><i class="fa fa-times"></i>
-            </a>
+            <h1>Proyectos Realizados </h1>
+           <div>
+            <a class="button" routerLink="/newProy">Agregar proyecto</a>
+           </div>
+        </div>
+
         <div>
             <ul>
                 <br>
                 <ng-container *ngFor="let Proyecto of proyectos">
                     <li>
                         <h2>{{Proyecto.nombre}}</h2>
-                        <h4>{{Proyecto.descripcion}}</h4>
-                        </li>
                         <br>
-                   <img class="image" [src]="Proyecto.img"> 
-                                         
-                    <br>
-                    <br>
-                    <a
-                    class="btn btn-primary tooltips" data-bs-toggle="modal" data-bs-target="#myModal"
-                    data-placement="top"
-                    data-toggle="tooltips"
-                    data-original-title="Edit"
-                    ><i class="fa fa-pencil"></i>
-                    </a>
-                    <a
-                    class="btn btn-secondary tooltips"
-                    data-placement="top"
-                    data-toggle="tooltips"
-                    data-original-title="Delete"
-                    ><i class="fa fa-times"></i>
-                    </a>
-                    <br>
-                    <br>
-                </ng-container>
-            </ul>
-        </div>
+                        <h3>{{Proyecto.descripcion}}</h3><div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+                            <br>
+                            <img class="image" [src]="Proyecto.img"
+                                    class="img-fluid img" />
+                    </div>
+
+                    <div class="">
+                        <div class="">
+                            <a class="btn bi-pencil-square" id="btn-edit-proy" routerLink="/editar-proyecto/{{Proyecto.id}}">
+                              <i class="fa fa-pencil"></i>
+                            </a>
+                          </div>
+                          <button (click)="eliminar_proyecto(Proyecto.id)" class="btn btn-info">
+                            X
+                        </button>
     </div>
-</div>

@@ -31,6 +31,18 @@ public class Experiencia {
     @NotNull
     @Size(min = 1, max = 500, message = "no cumple con la longitud")
     private String descripcion;
-
     
-    }
+public Experiencia(){
+          
+      }
+      public Experiencia(Long id, String empresa, String fecha_inicio, String fecha_fin, String cargo, String descripcion){
+          this.id = id;
+          this.empresa = empresa;
+          this.fecha_inicio = fecha_inicio;
+          this.fecha_fin = fecha_fin;
+          this.cargo = cargo;
+          this.descripcion = descripcion;
+      }
+}
+    
+    

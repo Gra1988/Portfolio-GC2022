@@ -31,5 +31,19 @@ public class Educacion {
      @NotNull
     @Size(min = 1, max = 100, message = "No cumple con la longitud")
     private String promedio; 
-    
+     
+     public Educacion(){
+          
+      }
+      public Educacion(Long id, String institucion, String titulo, String fecha_inicio, String fecha_fin, String promedio){
+          this.id = id;
+          this.institucion = institucion;
+          this.titulo = titulo;
+          this.fecha_inicio = fecha_inicio;
+          this.fecha_fin = fecha_fin;
+          this.promedio = promedio;
+          
+      }
 }
+    
+

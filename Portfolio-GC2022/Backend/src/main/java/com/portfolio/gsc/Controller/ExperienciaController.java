@@ -4,6 +4,7 @@ import com.portfolio.gsc.Entity.Experiencia;
 import com.portfolio.gsc.Interface.IExperienciaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -37,29 +37,26 @@ public class ExperienciaController {
  }
  //URL:PUERTO/experiencias/editar/(id)/empresa & fecha inicio & fecha fin & cargo & descripcin
  @PutMapping("/experiencias/editar/{id}")
- public Experiencia editExperiencia(@PathVariable Long id,
-                                         @RequestParam("empresa") String nuevoEmpresa,
-                                         @RequestParam("fecha_inicio") String nuevoFecha_inicio,
-                                         @RequestParam("fecha_fin") String nuevoFecha_fin,
-                                         @RequestParam("cargo") String nuevoCargo,
-                                         @RequestParam("descripcion") String nuevoDescripcion){
-     
-     Experiencia experiencia = iexperienciaService.findExperiencia(id);
-     
-     experiencia.setEmpresa(nuevoEmpresa);
-     experiencia.setFecha_inicio(nuevoFecha_inicio);
-     experiencia.setFecha_fin(nuevoFecha_fin);
-     experiencia.setCargo(nuevoCargo);
-     experiencia.setDescripcion(nuevoDescripcion);
-     
-     iexperienciaService.saveExperiencia(experiencia);
-     return experiencia;
-     
- 
+ public ResponseEntity<Experiencia>editExperiencia(@PathVariable Long id,
+        @RequestBody Experiencia e) {
+    Experiencia nuevaExp = iexperienciaService.findExperiencia(id);
+       
+    nuevaExp.setEmpresa(e.getEmpresa());
+    nuevaExp.setFecha_inicio(e.getFecha_inicio());
+    nuevaExp.setFecha_fin(e.getFecha_fin());
+    nuevaExp.setCargo(e.getCargo());
+    nuevaExp.setDescripcion(e.getDescripcion());
+    
+    iexperienciaService.saveExperiencia(nuevaExp);
+    return ResponseEntity.ok(nuevaExp);     
  }
  
  @GetMapping("/experiencias/traer/perfil")
 public Experiencia findExperiencia(){
     return iexperienciaService.findExperiencia((long)1);
+}
+@GetMapping("/experiencias/details/{id}")
+public Experiencia findExperiencia(@PathVariable Long id){
+    return iexperienciaService.findExperiencia(id);
 }
 }
