@@ -10,6 +10,7 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'newExp', component: NewExperienciaComponent},
   {path: 'newEdu', component: NewEducacionComponent},
   {path: 'newProy', component: NewProyectoComponent},
-  {path: 'editar-proyecto/:id', component: EditarProyectoComponent}
+  {path: 'editar-proyecto/:id', component: EditarProyectoComponent},
+  {path:'register', component: RegisterComponent},
 ];
 
 @NgModule({

@@ -2,7 +2,8 @@
     <div class="row">
         <div class="text">
             <h1>Proyectos Realizados </h1>
-           <div>
+           <div> <div *ngIf="userLogged |async as user">
+
             <a class="button" routerLink="/newProy">Agregar proyecto</a>
            </div>
         </div>
@@ -19,13 +20,15 @@
                             <img class="image" [src]="Proyecto.img"
                                     class="img-fluid img" />
                     </div>
-
+                     
                     <div class="">
                         <div class="">
+                            <br>
+                            <div *ngIf="userLogged |async as user">
                             <a class="btn bi-pencil-square" id="btn-edit-proy" routerLink="/editar-proyecto/{{Proyecto.id}}">
                               <i class="fa fa-pencil"></i>
                             </a>
-                          
+                            
                           <button (click)="eliminar_proyecto(Proyecto.id)" class="btn btn-secondary">
                             X
                         </button>

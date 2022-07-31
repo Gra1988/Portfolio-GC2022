@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 export class EducacionComponent implements OnInit {
   educacion: any;
   
-  constructor(private datosEducacion: EducacionService, private educacionservice: EducacionService) { }
+  constructor(private datosEducacion: EducacionService, private educacionservice: EducacionService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.datosEducacion.obtenerDatos().subscribe(data => {
@@ -22,5 +23,5 @@ export class EducacionComponent implements OnInit {
       });
       location.reload();
       }
-
+      userLogged = this.authService.getUserLogged();
 }

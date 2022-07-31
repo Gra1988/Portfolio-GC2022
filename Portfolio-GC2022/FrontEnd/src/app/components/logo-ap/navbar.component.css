@@ -1,0 +1,14 @@
+.bg-light {
+    --bs-bg-opacity: 0;
+   }
+
+   .btn-primary{
+    color: white;
+    background-color:#023831  ;
+    margin: 0.4em;
+   }
+   .btn-dark{
+    color: white;
+    background-color:#023831  ;
+    margin: 0.4em;
+   }

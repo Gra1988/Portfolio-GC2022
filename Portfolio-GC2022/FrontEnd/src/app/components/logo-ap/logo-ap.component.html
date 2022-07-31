@@ -1,16 +1,23 @@
 <div class="row">
     <div class="container">
         <div class="logo">
-        <img src="../../../assets/APLogo.png" id="logo_AP">
-
+            <img src="../../../assets/APLogo.png" id="APlogo">
         </div>
+        <div>
         <div class="redes">
-                <a href=""><img src="../../../assets/github.png" id="github"></a>
-                <a href=""><img src="../../../assets/facebook.png" id="facebook"></a>
-                <a href=""><img src="../../../assets/instagram.png" id="instagram"></a>
-                <button type="button" class="btn btn-outline-light" routerLink="login">INGRESO</button>
+            <div>
+                <a href="https://www.facebook.com/graciela.cruz.3152"><img src="../../../assets/facebook.png" id="face"></a>
+                <a href="https://instagram.com/grasil.cruz?igshid=YmMyMTA2M2Y="><img src="../../../assets/instagram.png" id="insta"></a>
+                <a href="https://github.com/Gra1988/Portfolio-GC2022"><img src="../../../assets/github.png" id="git"></a>
             </div>
+        </div> 
         </div>
-    </div>
-
+            <div *ngIf="userLogged|async as user; else LoginButton">
+        </div>
+            <app-navbar></app-navbar>
+        </div>
+    <ng-template #LoginButton>
+        <h1>Para poder EDITAR este portfolio debes LOGUEARTE :-)</h1>
+    </ng-template>
+</div>
 

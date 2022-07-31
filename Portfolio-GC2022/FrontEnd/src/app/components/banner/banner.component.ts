@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 import { PortadaService } from 'src/app/service/portada.service';
 
 @Component({
@@ -8,10 +9,10 @@ import { PortadaService } from 'src/app/service/portada.service';
 })
 export class BannerComponent implements OnInit {
 portada: any
-  constructor(private datosPortada: PortadaService) { }
+  constructor(private datosPortada: PortadaService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.datosPortada.obtenerDatos().subscribe(data => {this.portada = data;})
   }
-
+  userLogged = this.authService.getUserLogged();
 }

@@ -9,24 +9,25 @@ div{
 /*Estilo foto de perfil*/
 @media (min-width:575px){
     #foto_perfil{
-        position:absolute;
-        width:15%;
-        border-radius:100%;
-        box-shadow:3px 3px 3px grey;
-        left:3%;
-        top: 480px;
+        position: absolute;
+        width: 12%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        left: 6%;
+        top: 500px;
     }
-}
-@media (max-width:575px){
-    #foto_perfil{
-        position:absolute;
-        width: 30px;
-        border-radius:100%;
-        box-shadow:3px 3px 3px grey;
-        left:33%;
-        top:590px;
     }
-}
+    
+    @media (max-width:575px){
+        #foto_perfil{
+            position: absolute;
+            width: 20%;
+            border-radius: 100%;
+            box-shadow: 3px 3px 3px grey;
+            left: 39%;
+            top: 573px;
+        }
+    }
 /*Etiqueta del nombre*/
 @media (max-width:575px){
 #nombre{

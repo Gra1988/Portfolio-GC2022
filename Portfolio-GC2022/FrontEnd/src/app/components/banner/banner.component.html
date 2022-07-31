@@ -1,9 +1,11 @@
 <ng-container *ngFor="let Portada of portada">
     
     <div>
+        <div *ngIf="userLogged |async as user">
         <a class="btn bi-pencil-square" id="btn-edit-port" routerLink="/editar-portada/{{Portada.id}}">
             <i class="fa fa-pencil"></i>
         </a>
+        </div>
         <img class="image" class="img-fluid" [src]="Portada.imgportada">
     </div>
 </ng-container>

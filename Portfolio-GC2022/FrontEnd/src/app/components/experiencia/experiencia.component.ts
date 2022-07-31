@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ExperienciaComponent implements OnInit {
   
   experiencias:any;
 
-  constructor(private datosExperiencias: ExperienciaService, private experienciaservice: ExperienciaService) { }
+  constructor(private datosExperiencias: ExperienciaService, private experienciaservice: ExperienciaService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.datosExperiencias.obtenerDatos().subscribe(data =>{
@@ -23,6 +24,7 @@ export class ExperienciaComponent implements OnInit {
         });
         location.reload();
         }
+        userLogged = this.authService.getUserLogged();
   }
   
 

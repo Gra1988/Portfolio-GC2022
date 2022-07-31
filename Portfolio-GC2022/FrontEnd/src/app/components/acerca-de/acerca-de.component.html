@@ -9,7 +9,7 @@
         <p>Full Stack developer Jr. </p>
 
         <div>
-          <div class="">
+          <div *ngIf="userLogged |async as user">
             <a class="btn bi-pencil-square" id="btn-edit-exp" routerLink="/editar-acerca-de/{{Persona.id}}">
               <i class="fa fa-pencil"></i>
             </a>

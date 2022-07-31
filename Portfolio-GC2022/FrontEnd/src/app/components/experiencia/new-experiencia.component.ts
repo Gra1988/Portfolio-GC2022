@@ -26,6 +26,7 @@ export class NewExperienciaComponent implements OnInit {
   }
   onCreate(): void{
     this.crearExperiencia();
+    alert("Su nueva experiencia fue agregada correctamente");
     this.irAInicio();
       }
     
