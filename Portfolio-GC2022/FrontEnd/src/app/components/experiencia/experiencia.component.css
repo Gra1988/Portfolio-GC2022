@@ -18,13 +18,27 @@ h1{
 color: white;
 font-style: italic;
 }
-.btn-primary {
+
+.bi-pencil-square {
     color: #fff;
     background-color: black;
     border-color: #6c757d;
 }
-.btn-secondary {
+.button{
+    background-color: black; 
+  border: none;
+  color: #fff;
+  padding: 10px 13px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgb(49, 49, 49);
+  border-radius: 15px;
+  margin: 0.8em;
+  }
+  .btn-secondary{
     color: #fff;
     background-color: #8b0000;
-    border-color: #6c757d;
+    border-color: #6c757d; 
+    
 }
